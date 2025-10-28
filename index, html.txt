@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benny Wash</title>
+  <style>
+    :root{ --beige:#F6F2EE; --gold:#C68620; --red:#E74C3C; --text:#2b2b2b; }
+    body{ font-family: Tahoma, 'Helvetica Neue', Arial; background:var(--beige); color:var(--text); margin:0; }
+    .container{ max-width:1100px; margin:24px auto; padding:0 16px; }
+    header{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand img{ height:64px; width:auto; }
+    .brand h1{ margin:0; font-size:20px; color:var(--gold); letter-spacing:2px; }
+    nav{ display:flex; gap:12px; align-items:center; }
+    .lang-btn{ border:1px solid rgba(0,0,0,0.08); padding:6px 10px; border-radius:8px; cursor:pointer; background:white; }
+    .hero{ margin-top:24px; display:flex; gap:24px; align-items:center; }
+    .hero .left{ flex:1 }
+    .hero h2{ font-size:28px; margin:0 0 8px 0; }
+    .hero p{ margin:0 0 12px 0; color:#555; }
+    .products{ margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+    .card{ background:white; border-radius:14px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); text-align:center; }
+    .card img{ max-width:100%; height:160px; object-fit:contain; border-radius:8px; }
+    .card h3{ margin:10px 0 6px 0; font-size:16px; }
+    .price{ font-weight:700; color:var(--gold); margin-bottom:8px; }
+    .buy{ background:var(--gold); color:white; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; }
+    footer{ margin-top:36px; padding:18px; text-align:center; color:#555; }
+    html[lang="fa"] body{ direction:rtl; }
+    html[lang="en"] body{ direction:ltr; }
+    .contact-form{ background:white; padding:12px; border-radius:10px; margin-top:18px; }
+    .input, textarea{ width:100%; padding:8px; margin:6px 0; border-radius:8px; border:1px solid #e6e6e6; }
+    .note{ font-size:13px; color:#666; margin-top:8px; }
+    .top-links{ display:flex; gap:8px; align-items:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img id="site-logo" src="public/assets/logo.png" alt="Benny Wash Logo"/>
+        <div>
+          <h1 id="brand-title">BENNY WASH</h1>
+          <div style="font-size:12px;color:#666">Luxury Cleaning Solutions</div>
+        </div>
+      </div>
+      <nav>
+        <div class="top-links">
+          <a href="#products" style="text-decoration:none;color:#555">محصولات</a>
+          <a href="#about" style="text-decoration:none;color:#555;margin-right:10px">درباره ما</a>
+          <button class="lang-btn" id="toggle-lang">English</button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <h2 id="hero-title">بِنی واش — پاک‌کنندگیِ با اعتماد</h2>
+        <p id="hero-desc">محصولات شویندهٔ تخصصی با تمرکز بر کیفیت، ایمنی الیاف و رایحه‌های لوکس.</p>
+        <div style="margin-top:12px;">
+          <button class="buy" onclick="document.getElementById('products').scrollIntoView()">
+            مشاهده محصولات
+          </button>
+        </div>
+      </div>
+      <div class="right">
+        <img src="public/assets/logo.png" style="width:220px;opacity:0.95;border-radius:16px" alt="hero"/>
+      </div>
+    </section>
+
+    <section id="products" class="products" aria-label="Products">
+      <!-- سه نمونه محصول؛ بعدا تصاویر واقعی را در public/assets/ قرار دهید -->
+      <div class="card">
+        <img src="public/assets/product1.png" alt="مایع لباسشویی"/>
+        <h3 class="pname">مایع لباسشویی — ۱ کیلو</h3>
+        <div class="price">۱۸۵,۰۰۰ تومان</div>
+        <button class="buy" onclick="openOrder('مایع لباسشویی — ۱ کیلو',185000)">خرید</button>
+      </div>
+      <div class="card">
+        <img src="public/assets/product2.png" alt="مایع ظرفشویی"/>
+        <h3 class="pname">مایع ظرفشویی — ۱ کیلو</h3>
+        <div class="price">۱۲۵,۰۰۰ تومان</div>
+        <button class="buy" onclick="openOrder('مایع ظرفشویی — ۱ کیلو',125000)">خرید</button>
+      </div>
+      <div class="card">
+        <img src="public/assets/product3.png" alt="جرم‌گیر"/>
+        <h3 class="pname">جرم‌گیر — ۱ کیلو</h3>
+        <div class="price">۱۴۰,۰۰۰ تومان</div>
+        <button class="buy" onclick="openOrder('جرم‌گیر — ۱ کیلو',140000)">خرید</button>
+      </div>
+    </section>
+
+    <section id="order" class="contact-form" style="display:none">
+      <h3 id="order-title">فرم سفارش</h3>
+      <form onsubmit="submitOrder(event)">
+        <input class="input" id="customer-name" placeholder="نام و نام خانوادگی" required/>
+        <input class="input" id="customer-mobile" placeholder="شماره موبایل" required/>
+        <input class="input" id="customer-email" placeholder="ایمیل (اختیاری)"/>
+        <div id="selected-product" style="margin:8px 0;font-weight:600"></div>
+        <input type="number" class="input" id="qty" value="1" min="1" />
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button class="buy" type="submit">ثبت و پرداخت</button>
+          <button type="button" onclick="closeOrder()" style="border:1px solid #ddd;padding:8px;border-radius:8px">لغو</button>
+        </div>
+      </form>
+      <div class="note">پرداخت: انتقال بانکی یا درگاه (بعد از فعال‌سازی درگاه زرین‌پال امکان پرداخت آنلاین فراهم می‌شود).</div>
+    </section>
+
+    <section id="about" class="contact-form" style="margin-top:18px">
+      <h3>درباره ما</h3>
+      <p>بِنی واش ترکیبی از تجربه و تحقیق در شوینده‌هاست. هدف ما کیفیت، ایمنی الیاف و رایحه‌های لوکس است.</p>
+    </section>
+
+    <footer>
+      <div><strong>تماس:</strong> ۰۹۱۲۰۶۷۱۵۸۰ — Bennywash90@gmail.com</div>
+      <div style="margin-top:6px">آدرس: کرج، هشتگرد</div>
+      <div style="margin-top:8px;font-size:13px;color:#777">© Benny Wash — All rights reserved.</div>
+    </footer>
+  </div>
+
+<script>
+  const langBtn = document.getElementById('toggle-lang');
+  let lang = 'fa';
+  function setLang(newLang){
+    lang = newLang;
+    if(lang==='fa'){
+      document.documentElement.lang='fa';
+      document.getElementById('hero-title').innerText='بِنی واش — پاک‌کنندگیِ با اعتماد';
+      document.getElementById('hero-desc').innerText='محصولات شویندهٔ تخصصی با تمرکز بر کیفیت، ایمنی الیاف و رایحه‌های لوکس.';
+      langBtn.innerText='English';
+      document.querySelector('header').style.flexDirection = 'row-reverse';
+    } else {
+      document.documentElement.lang='en';
+      document.getElementById('hero-title').innerText='Benny Wash — Trusted Clean';
+      document.getElementById('hero-desc').innerText='Premium cleaning products focused on performance, fabric care and luxurious scents.';
+      langBtn.innerText='فارسی';
+      document.querySelector('header').style.flexDirection = 'row';
+    }
+  }
+  langBtn.addEventListener('click', ()=> setLang(lang==='fa'?'en':'fa'));
+  setLang('fa');
+
+  function openOrder(name, price){
+    document.getElementById('order').style.display='block';
+    document.getElementById('selected-product').innerText = name + ' — ' + price.toLocaleString() + ' تومان';
+    window.scrollTo({top:document.getElementById('order').offsetTop-20, behavior:'smooth'});
+  }
+  function closeOrder(){ document.getElementById('order').style.display='none'; }
+
+  function submitOrder(e){
+    e.preventDefault();
+    const name = document.getElementById('customer-name').value;
+    const mobile = document.getElementById('customer-mobile').value;
+    const email = document.getElementById('customer-email').value;
+    const prod = document.getElementById('selected-product').innerText || '—';
+    const qty = document.getElementById('qty').value;
+    const subject = encodeURIComponent('سفارش جدید - Benny Wash');
+    const body = encodeURIComponent('نام: '+name+'\\nموبایل: '+mobile+'\\nایمیل: '+email+'\\nمحصول: '+prod+'\\nتعداد: '+qty);
+    // mailto as temporary order flow:
+    window.location.href = 'mailto:Bennywash90@gmail.com?subject='+subject+'&body='+body;
+    alert('سفارش شما آماده شد؛ ایمیل ارسال و برای پرداخت با شما تماس گرفته می‌شود.');
+    closeOrder();
+  }
+</script>
+</body>
+</html>
