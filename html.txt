@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BennyWash | حس پاکی و لطافت</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="BennyWash" class="logo">
+      <nav class="main-nav">
+        <a href="index.html" class="active">خانه</a>
+        <a href="products.html">محصولات</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html">تماس با ما</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>حس پاکی و لطافت با بنی‌واش</h1>
+        <p class="lead">با محصولات شوینده بنی‌واش، انتخابی متفاوت</p>
+        <div class="hero-cta">
+          <a class="btn" href="products.html">مشاهده محصولات</a>
+          <a class="btn outline" href="contact.html">تماس با ما</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <article>
+        <h3>کیفیت لوکس</h3>
+        <p>فرمولاسیونِ دقیق و مناسب برای محافظت از البسه و سطوح.</p>
+      </article>
+      <article>
+        <h3>طراحی چشمگیر</h3>
+        <p>بسته‌بندی لوکس که تجربه‌ی خرید را ارتقا می‌دهد.</p>
+      </article>
+      <article>
+        <h3>ارسال سریع</h3>
+        <p>پرداخت و ارسال امن و سریع به سراسر کشور.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 BennyWash — حس پاکی و لطافت</p>
+    </div>
+  </footer>
+</body>
+</html>

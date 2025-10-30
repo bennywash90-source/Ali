@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>محصولات — BennyWash</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="BennyWash" class="logo">
+      <nav class="main-nav">
+        <a href="index.html">خانه</a>
+        <a href="products.html" class="active">محصولات</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html">تماس با ما</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container products-page">
+    <h1>محصولات ما</h1>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="assets/images/bg1.jpg" alt="مایع لباسشویی">
+        <h3>مایع لباسشویی</h3>
+        <p class="price">۷۵,۰۰۰ تومان</p>
+        <a class="btn" href="contact.html">سفارش / اطلاعات بیشتر</a>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/images/bg2.jpg" alt="مایع دستشویی">
+        <h3>مایع دستشویی</h3>
+        <p class="price">۵۵,۰۰۰ تومان</p>
+        <a class="btn" href="contact.html">سفارش / اطلاعات بیشتر</a>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/images/bg3.jpg" alt="مایع ظرفشویی">
+        <h3>مایع ظرفشویی</h3>
+        <p class="price">۴۵,۰۰۰ تومان</p>
+        <a class="btn" href="contact.html">سفارش / اطلاعات بیشتر</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 BennyWash</div></footer>
+</body>
+</html>

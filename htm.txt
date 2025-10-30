@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>درباره ما — BennyWash</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="BennyWash" class="logo">
+      <nav class="main-nav">
+        <a href="index.html">خانه</a>
+        <a href="products.html">محصولات</a>
+        <a href="about.html" class="active">درباره ما</a>
+        <a href="contact.html">تماس با ما</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container about-page">
+    <h1>درباره بنی‌واش</h1>
+    <p>بنی‌واش با هدف ارائه‌ی محصولات شوینده باکیفیت و دوست‌دار طبیعت آغاز به کار کرده است. مأموریت ما ارائه تجربه‌ای از پاکی و لطافت است که هم برای شما و هم برای محیط‌زیست محترمانه باشد.</p>
+
+    <h3>ماموریت</h3>
+    <p>ارائه محصولات ایمن، مؤثر و با طراحی لوکس که حس تمیزی و راحتی را در خانه‌های شما به ارمغان بیاورد.</p>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 BennyWash</div></footer>
+</body>
+</html>

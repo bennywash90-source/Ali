@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تماس با ما — BennyWash</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="BennyWash" class="logo">
+      <nav class="main-nav">
+        <a href="index.html">خانه</a>
+        <a href="products.html">محصولات</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html" class="active">تماس با ما</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <h1>تماس با بنی‌واش</h1>
+    <p>ما مشتاق شنیدن نظر شما هستیم 💬</p>
+
+    <ul class="contact-info">
+      <li>📞 ۰۹۱۲۰۶۷۱۵۸۰</li>
+      <li>📧 bennywash90@gmail.com</li>
+      <li>📍 کرج، هشتگرد</li>
+    </ul>
+
+    <!-- Netlify form -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none">
+        <label>اگر انسان نیستید، فیلد را پر کنید: <input name="bot-field"></label>
+      </p>
+
+      <label>نام
+        <input type="text" name="name" required>
+      </label>
+
+      <label>ایمیل
+        <input type="email" name="email" required>
+      </label>
+
+      <label>پیام
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit" class="btn">ارسال پیام</button>
+    </form>
+
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 BennyWash</div></footer>
+</body>
+</html>
